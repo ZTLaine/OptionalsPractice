@@ -9,6 +9,9 @@ public class SuspectLocation {
         this.country = country;
     }
 
+    public SuspectLocation() {
+    }
+
     public String getName() {
         return name;
     }
