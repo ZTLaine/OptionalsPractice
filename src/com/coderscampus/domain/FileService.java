@@ -19,6 +19,7 @@ public class FileService {
                 lineData = bufferedReader.readLine().split(",|\\r\\n|\\n");
 
                 suspectLocationList.add(new SuspectLocation(lineData[0], lineData[1]));
+                System.out.println(lineData[0] + lineData[1]);
 
             }
         } catch (IOException e) {

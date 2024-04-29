@@ -8,11 +8,14 @@ public class OptionalsApp {
         String FILE_NAME = "InterpolWatchReport-Week";
         Integer fileNum = 3;
         FileService fileService = new FileService();
-        List<SuspectLocation> suspectLocation = new ArrayList<>();
+        List<SuspectLocation> suspectLocationList = new ArrayList<>();
 
         for (int i = 1; i <= 3; i++) {
-            fileService.readFile(FILE_NAME + fileNum + ".csv", suspectLocation);
-            System.out.println("Week " + i + ":" + "\\n");
+            fileService.readFile(FILE_NAME + fileNum + ".csv", suspectLocationList);
+            System.out.println("Week " + i + ":");
+//            suspectLocationList.stream()
+//                            .
+            System.out.println();
         }
     }
 }
