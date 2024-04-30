@@ -13,8 +13,9 @@ public class OptionalsApp {
         for (int i = 1; i <= 3; i++) {
             fileService.readFile(FILE_NAME + fileNum + ".csv", suspectLocationList);
             System.out.println("Week " + i + ":");
-//            suspectLocationList.stream()
-//                            .
+            suspectLocationList.stream()
+                            .filter(suspect -> suspect.getName().equals("CARMEN SANDIEGO"))
+                            .forEach(System.out::println);
             System.out.println();
         }
     }

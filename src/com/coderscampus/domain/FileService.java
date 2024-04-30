@@ -18,8 +18,8 @@ public class FileService {
 //                SuspectLocation newEntry = ;
                 lineData = bufferedReader.readLine().split(",|\\r\\n|\\n");
 
-                suspectLocationList.add(new SuspectLocation(lineData[0], lineData[1]));
-                System.out.println(lineData[0] + lineData[1]);
+                suspectLocationList.add(new SuspectLocation(lineData[1], lineData[0]));
+//                System.out.println(lineData[0] + lineData[1]);
 
             }
         } catch (IOException e) {
