@@ -10,14 +10,15 @@ public class OptionalsApp {
         FileService fileService = new FileService();
         List<SuspectLocation> suspectLocationList = new ArrayList<>();
 
-        for (int i = 1; i <= 3; i++) {
-            fileService.readFile(FILE_NAME + fileNum + ".csv", suspectLocationList);
+        for (int i = 1; i <= fileNum; i++) {
+            fileService.readFile(FILE_NAME + i + ".csv", suspectLocationList);
             System.out.println("Week " + i + ":");
             suspectLocationList.stream()
-                            .filter(suspect -> suspect.getName().equals("CARMEN SANDIEGO"))
-                            .findAny()
-                            .ifPresent(suspectLocation -> System.out.println("Carmen Sandiego is in..." + suspectLocation.getCountry()));
+                    .filter(suspect -> suspect.getName().equals("CARMEN SANDIEGO"))
+                    .findAny()
+                    .ifPresentOrElse(suspectLocation -> System.out.println("Carmen Sandiego is in..." + suspectLocation.getCountry()), () -> System.out.println("Couldn't find her!"));
             System.out.println();
+            suspectLocationList.clear();
         }
     }
 }
