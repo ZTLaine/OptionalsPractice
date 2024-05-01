@@ -15,7 +15,8 @@ public class OptionalsApp {
             System.out.println("Week " + i + ":");
             suspectLocationList.stream()
                             .filter(suspect -> suspect.getName().equals("CARMEN SANDIEGO"))
-                            .forEach(System.out::println);
+                            .findAny()
+                            .ifPresent(suspectLocation -> System.out.println("Carmen Sandiego is in..." + suspectLocation.getCountry()));
             System.out.println();
         }
     }
